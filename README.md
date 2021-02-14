@@ -1,4 +1,8 @@
+# Will be completed soon
+
+
 # FlexER: Flexible Entity Resolution
+
 
 FlexER is a mehthod for solving multiple intents entity resolution (MIER) problem.
 FlexER combines independent intent solutions to improve outcome to multiple resolution problems, by using graph convolutional network (GCN).
