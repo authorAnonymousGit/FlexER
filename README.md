@@ -46,8 +46,15 @@ For further details and official definitions, please refer to our paper (current
 2. [PyTorch Geometric (Version 1.6.3)](https://pytorch-geometric.readthedocs.io/en/latest/#)
 
 ## Getting Started
+We provide instructions for the sake of reproducibility.
 
 ### Datasets
+| Dataset  | # Records | # Pairs | # Intents |
+| ------------- | ------------- | ------------- | ------------- |
+| AmazonMI  | 3,835  | 15,404  |  5  |
+| iTunes-Amazon  | 62,830  | 539  |  4  |
+| Walmart-Amazon  | 24,628  | 10,242  |  4  |
+| AmazonMI  | 10,935  | 30,673  |  2  |
 
 ### training with Ditto
 
