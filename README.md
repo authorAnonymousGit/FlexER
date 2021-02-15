@@ -62,6 +62,14 @@ Explanations about candidate pair representation is provided in [DITTO](https://
 Details about the datasets and intents creation are given in our paper (currently under review).
 
 ### training with Ditto
+To train the independent intent matchers with Ditto (you can apply your own matcher instead):
+```
+python train_ditto.py  --task Amazon/Amazon-Website  --batch 32  \
+--max_len 256  --lr 3e-5  --n_epochs 10  --finetuning  \
+--save_model  --lm roberta  --da del  \
+--dk product  --summarize  --intents_num 5
+```
+The meaning of the flags, excluding intents_num, are described in [DITTO](https://github.com/megagonlabs/ditto).
 
 ### Yielding prediction vectors
 
