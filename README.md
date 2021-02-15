@@ -17,7 +17,7 @@ To better understand the meaning of multiple intents, note that the universal vi
 Such an entity set is not explicitly known, yet typically referred to abstractly as a “real-world entity." We argue that an entity set of choice may vary according to user needs and different users may seek different solutions from the same dataset.
 
 A one-size-fits-all resolution provides an adequate solution for universal ER, a standalone task with a single equivalence intent.
-Yet, some data cleaning/integration challenges (recall Section 1.1) may involve multiple intents. Therefore, instead of performing a universal ER, we argue for enhancing ER to support multiple outcomes for multiple intents. 
+Yet, some data cleaning/integration challenges may involve multiple intents. Therefore, instead of performing a universal ER, we argue for enhancing ER to support multiple outcomes for multiple intents. 
 A MIER involves a set of (possibly related) entity mappings for a set of intents E = {𝐸1, 𝐸2, · · · , 𝐸𝑃 }, offering multiple ways to divide 𝐷, each serving as a solution for a
 respective intent.
 
@@ -26,7 +26,7 @@ For further details and official definitions, please refer to our paper (current
 ## Methodology
 Our proposed solution to the problem of MIER casts the problem as a multi-class multi-label task. As a baseline solution, we first propose to treat multiple intents as a set of independent single intent problems, where each intent is considered individually and provides an independent solution for single intent ER (using [DITTO](https://github.com/megagonlabs/ditto)).
 
-We then describe Flexible Entity Resolution (FlexER), a flexible algorithm to the MIER problem, which constructs an intents graph using record pairs representations and applies a graph convolutional network (GCN) to provide improved resolutions.
+We then perform Entity Resolution (FlexER), a flexible algorithm to the MIER problem, which constructs an intents graph using record pairs representations and applies a graph convolutional network (GCN) to provide improved resolutions.
 
 FlexER utilizes the interrelations between intents using the matchers to enrich the ability of the MIER solution as well as the resolution of the individual intents. FlexER
 builds upon the solutions of [DITTO](https://github.com/megagonlabs/ditto), training 𝑃 independent matchers, one for each intent. 
