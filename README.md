@@ -42,6 +42,8 @@ For further details and official definitions, please refer to our paper (current
 ![FlexER_small](FlexER_small.JPG)
 
 ## Requirements
+1. The same as mentioned in [DITTO](https://github.com/megagonlabs/ditto)
+2. [PyTorch Geometric (Version 1.6.3)](https://pytorch-geometric.readthedocs.io/en/latest/#)
 
 ## Getting Started
 
