@@ -54,7 +54,12 @@ We provide instructions for the sake of reproducibility.
 | AmazonMI  | 3,835  | 15,404  |  5  |
 | iTunes-Amazon  | 62,830  | 539  |  4  |
 | Walmart-Amazon  | 24,628  | 10,242  |  4  |
-| AmazonMI  | 10,935  | 30,673  |  2  |
+| WDC  | 10,935  | 30,673  |  2  |
+
+The used datasets are provided in the [data](./data/) folder, divided to train, validation and test (for each intent).
+Explanations about candidate pair representation is provided in [DITTO](https://github.com/megagonlabs/ditto).
+
+Details about the datasets and intents creation are given in our paper (currently under review).
 
 ### training with Ditto
 
