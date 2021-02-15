@@ -38,6 +38,8 @@ The GCN inference is performed using a message passing algorithm following [Kipf
 
 For further details and official definitions, please refer to our paper (currently under review).
 
+![FlexER_small](FlexER_small.JPG)
+
 ## Requirements
 
 ## Getting Started
