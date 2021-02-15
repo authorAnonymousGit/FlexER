@@ -62,17 +62,31 @@ Explanations about candidate pair representation is provided in [DITTO](https://
 Details about the datasets and intents creation are given in our paper (currently under review).
 
 ### training with Ditto
-To train the independent intent matchers with Ditto (you can apply your own matcher instead):
+To train the independent intent matchers with Ditto (you can apply your own matcher instead), run the following command:
 ```
-python train_ditto.py  --task Amazon/Amazon-Website  --batch 32  \
---max_len 256  --lr 3e-5  --n_epochs 10  --finetuning  \
---save_model  --lm roberta  --da del  \
+python train_ditto.py  --task Amazon/Amazon-Website  \
+--batch 32  --max_len 256  --lr 3e-5  --n_epochs 10  \
+--finetuning  --save_model  --lm roberta  --da del  \
 --dk product  --summarize  --intents_num 5
 ```
 The meaning of the flags, excluding intents_num, are described in [DITTO](https://github.com/megagonlabs/ditto).
 
 ### Yielding prediction vectors
+After training the models for each intent, the creation of pair representations (in our case,  the final embedding of the special token [cls]), can be executed using the following command:
+```
+python matcher.py  --task Amazon/Amazon-Website  \
+--input_path data/Amazon/Amazon-Website  \
+--output_path data/Amazon/Amazon-Website  \
+--lm roberta  --checkpoint_path checkpoints/  \
+--max_len 256 --intents_num 5
+```
 
 ### Running FlexER
-
-
+The final stage of our framework is the integration of the independent intent representations. We run it with the following command (for each intent separately):
+```
+python graph_matcher.py  --task Amazon/Amazon-Website  \
+--files_path data/  --n_epochs 10  \
+--intent 0  --batch_size 32  \
+--intents_num 5  --hidden_channels 1024  \
+--output_path data/Amazon/Amazon-Website
+```
