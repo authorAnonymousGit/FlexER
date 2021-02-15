@@ -21,21 +21,33 @@ Yet, some data cleaning/integration challenges (recall Section 1.1) may involve 
 A MIER involves a set of (possibly related) entity mappings for a set of intents E = {𝐸1, 𝐸2, · · · , 𝐸𝑃 }, offering multiple ways to divide 𝐷, each serving as a solution for a
 respective intent.
 
-For further details and official definitions, please reffer to our paper (currently under review).
+For further details and official definitions, please refer to our paper (currently under review).
 
 ## Methodology
+Our proposed solution to the problem of MIER casts the problem as a multi-class multi-label task. As a baseline solution, we first propose to treat multiple intents as a set of independent single intent problems, where each intent is considered individually and provides an independent solution for single intent ER (using [DITTO](https://github.com/megagonlabs/ditto)).
 
+We then describe Flexible Entity Resolution (FlexER), a flexible algorithm to the MIER problem, which constructs an intents graph using record pairs representations and applies a graph convolutional network (GCN) to provide improved resolutions.
+
+FlexER utilizes the interrelations between intents using the matchers to enrich the ability of the MIER solution as well as the resolution of the individual intents. FlexER
+builds upon the solutions of [DITTO](https://github.com/megagonlabs/ditto), training 𝑃 independent matchers, one for each intent. 
+Rather than solely depend on the final predictions of the independent matchers, FlexER employs the record pairs representations to construct an intent graph that
+is fed into a graph convolutional network (GCN) structure. 
+Given an input record pair, an undirected graph is created. The nodes of the graph correspond to the record pair representations for each intent, and the edges to the interrelations among the intents (calculated as the Pearson correlation between the intents' labels over the training set).
+
+The GCN inference is performed using a message passing algorithm following [Kipf & Welling](https://arxiv.org/abs/1609.02907).
+
+For further details and official definitions, please refer to our paper (currently under review).
 
 ## Requirements
 
 ## Getting Started
 
-## Datasets
+### Datasets
 
-## training with Ditto
+### training with Ditto
 
-## Yielding prediction vectors
+### Yielding prediction vectors
 
-## Running FlexER
+### Running FlexER
 
 
